@@ -76,3 +76,11 @@ In the following images:
 
 ![Proximity sensor - Pi wiring](sensor-wiring-pi.jpeg)
 ![Proximity sensor - sensor wiring](sensor-wiring.jpeg)
+
+## Software
+
+1. Connect your Pi to your network.
+    1. If you're using a Zero W you can [follow this guide to connect to your wifi and enable ssh](https://www.raspberrypi-spy.co.uk/2017/04/manually-setting-up-pi-wifi-using-wpa_supplicant-conf/)
+    1. If you're using a non--W Zero you can connect your network adaptor to the pi via your micro--USB to ethernet adaptor
+    1. Either way, you need to enable ssh by creating a blank file called `ssh` in the `boot` partition
+1. Turn on your Pi and ssh in. Open a terminal (or terminal emulator) and type in `ssh pi@192.168.xxx.xxx` (you can get the full ip address from your network router's 'devices' page)
