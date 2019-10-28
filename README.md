@@ -52,9 +52,27 @@ Proceed without a static strap at your own risk.
 1. Solder the header to the proximity sensor
 1. Set up the STS robot chassis following the instructions given, or have a look at the [build video](https://youtu.be/jHn3ZiPG69w)
 1. Stick the proximity sensor to the camera mount and install the mount on the STS chassis
+1. Mount the assembled pi zero to the chassis (I just used the double--sided adhesive pads)
 
 ## Wiring
 
-1. The two motors are labelled on the chassis. Wire motor one to (you've guessed it) `Motors 1` on the explorer pHAT, and motor two to `Motors 2`. The polarity is indicated on the bottom of the motors.
+1. The two motors are labelled on the chassis. Wire motor one to (you've guessed it) `Motors 1` on the explorer pHAT, and motor two to `Motors 2`, using the male--to--female jumper jerky. The polarity is indicated on the bottom of the motors. I tend to use red wires for `+` and whatever other colour I have for `-`.
 
 ![Motor polarity](motor-polarity.jpeg)
+
+1. Now using female--to--female jumper jerky wire the sensor to the Pico HAT Hacker header.
+    1. `Vin` is `+` and goes to pin `2` or `4` (one of the red pins)
+    1. `GND` is ground and goes to pin `6` (black)
+    1. `SDA` goes to pin `3` (labelled `DA`)
+    1. `SCL` goes to pin `5` (labelled `CL`)
+
+You can use this [explorer pHAT pinout to help](https://pinout.xyz/pinout/explorer_phat).
+In the following images:
+
+- red is `5V`/`Vin`
+- brown is `Ground`/`GND`
+- yellow is `DA`/`SDA`
+- orange is `CL`/`SCL`
+
+![Proximity sensor - Pi wiring](sensor-wiring-pi.jpeg)
+![Proximity sensor - sensor wiring](sensor-wiring.jpeg)
