@@ -1,5 +1,7 @@
 # Moon buggy robot with proximity detection
 
+![The finished robot](robot-finished.jpeg)
+
 Code and instructions for moon buggy robot with proximity detection.
 
 You will need:
