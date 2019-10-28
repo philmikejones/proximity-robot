@@ -16,7 +16,7 @@ Equipment:
 - [Male--to--female jumper jerky](https://shop.pimoroni.com/products/jumper-jerky-junior?variant=1076482177)
 - [Female--to--female jumper jerky](https://shop.pimoroni.com/products/jumper-jerky-junior?variant=1076482185)
 - [Proximity sensor](https://shop.pimoroni.com/products/adafruit-vcnl4040-proximity-and-lux-sensor-stemma-qt)
-- [USB battery](https://www.amazon.co.uk/gp/product/B07KY63Z3R/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
+- USB cylindrical battery (I got the [cheapest one from Amazon I could find](https://www.amazon.co.uk/gp/product/B07KY63Z3R/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1))
 - Micro SD card
 
 Tools:
@@ -24,6 +24,7 @@ Tools:
 - Soldering iron (or get solderless equivalent headers)
 - Flat--tip screwdriver
 - [Anti--static wrist strap](https://shop.pimoroni.com/products/anti-static-wrist-strap) (optional but recommended)
+- [Double--sided adhesive pads](https://www.amazon.co.uk/Sellotape-Permanent-Double-Sided-Sticky/dp/B004OHT7LS/ref=sxbs_bbp_recs_sx_w_p_v1?keywords=adhesive+pads&pd_rd_i=B004OHT7LS&pd_rd_r=20044f5f-d219-4ed1-9727-8bbff4120d2b&pd_rd_w=4boMm&pd_rd_wg=e2PTD&pf_rd_p=e6692ec6-496f-4aae-9035-49021365f38d&pf_rd_r=439N9P4EHGCF90QT6NBB&qid=1572294758) or similar for mounting
 
 Notes:
 
@@ -47,3 +48,13 @@ Proceed without a static strap at your own risk.
 
 ![Pi Zero with headers and explorer pHAT](pi-explorer.jpeg)
 ![Pi Zero with headers and explorer pHAT side profile](pi-explorer-profile.jpeg)
+
+1. Solder the header to the proximity sensor
+1. Set up the STS robot chassis following the instructions given, or have a look at the [build video](https://youtu.be/jHn3ZiPG69w)
+1. Stick the proximity sensor to the camera mount and install the mount on the STS chassis
+
+## Wiring
+
+1. The two motors are labelled on the chassis. Wire motor one to (you've guessed it) `Motors 1` on the explorer pHAT, and motor two to `Motors 2`. The polarity is indicated on the bottom of the motors.
+
+![Motor polarity](motor-polarity.jpeg)
