@@ -39,5 +39,8 @@ Proceed without a static strap at your own risk.
 ![Pi Zero with header and Pico HAT Hacker with additional header](pi-header-pico.jpeg)
 
 1. Solder the headers to the Explorer pHAT (ensuring the double row of headers faces **DOWN**)
+
+![Explorer pHAT with headers](explorer-phat-headers.jpeg)
+
 1. Place the Pico HAT Hacker on the Pi Zero header and solder in place. Be sparing with the solder to allow enough room for the Explorer pHAT to attach.
 1. Fit the Explorer pHAT to the GPIO pins as normal and press down firmly for a snug fit.
