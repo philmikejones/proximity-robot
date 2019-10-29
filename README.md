@@ -96,7 +96,7 @@ In the following images:
 1. Run the sensor calibration script with `python3 test-sensor.py`. This should continually output integer values. Wave your hand in front of the sensor about 200mm and see how the value printed out changes. This is your threshold for when the robot should trigger evasive manoeuvres! On mine this was about 2500. When you're happy with the value you need, cancel this script with `CTRL` + `c`.
 1. Edit robot.py with `nano robot.py`.
 1. Edit the `threshold = 2500` line and replace the `2500` with the threshold you determined above.
-1. While you have this file open you can also edit the steps the robot takes to avoid obstacles. These are the lines under `elif sensor.proximity > 2501:`. I have just set the robot to back up a bit and turn for now.
+1. While you have this file open you can also edit the steps the robot takes to avoid obstacles. These are the lines under `elif sensor.proximity >= threshold:`. I have just set the robot to back up a bit and turn for now.
 1. Close with `CTRL` + `x`, `y`
 
 ## Run on startup
