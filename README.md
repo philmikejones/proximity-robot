@@ -15,7 +15,7 @@ Equipment:
 - 2x [male 2x20 GPIO header](https://shop.pimoroni.com/products/colour-coded-gpio-headers)
 - [Male--to--female jumper jerky](https://shop.pimoroni.com/products/jumper-jerky-junior?variant=1076482177)
 - [Female--to--female jumper jerky](https://shop.pimoroni.com/products/jumper-jerky-junior?variant=1076482185)
-- [Proximity sensor](https://shop.pimoroni.com/products/adafruit-vcnl4040-proximity-and-lux-sensor-stemma-qt)
+- [Proximity sensor](https://shop.pimoroni.com/products/vcnl4010-proximity-light-sensor)
 - USB cylindrical battery (I got the [cheapest one from Amazon I could find](https://www.amazon.co.uk/gp/product/B07KY63Z3R/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1))
 - Micro SD card
 
@@ -79,8 +79,12 @@ In the following images:
 
 ## Software
 
+1. [Etch Raspbian](https://www.raspberrypi.org/downloads/raspbian/) to your SD card. We're going to be working headless (i.e. no keyboard and monitor) so you can use Raspbian Lite.
 1. Connect your Pi to your network.
     1. If you're using a Zero W you can [follow this guide to connect to your wifi and enable ssh](https://www.raspberrypi-spy.co.uk/2017/04/manually-setting-up-pi-wifi-using-wpa_supplicant-conf/)
     1. If you're using a non--W Zero you can connect your network adaptor to the pi via your micro--USB to ethernet adaptor
     1. Either way, you need to enable ssh by creating a blank file called `ssh` in the `boot` partition
-1. Turn on your Pi and ssh in. Open a terminal (or terminal emulator) and type in `ssh pi@192.168.xxx.xxx` (you can get the full ip address from your network router's 'devices' page)
+1. Turn on your Pi and ssh in. Open a terminal (or terminal emulator) and type in `ssh pi@192.168.xxx.xxx` (you can get the full ip address from your network router's 'devices' page) and enter the password (default `raspberry`)
+1. You may need to [install pip3](https://www.raspberrypi.org/documentation/linux/software/python.md): `sudo apt install python3-pip`
+1. Install the [explorer library from Pimoroni](https://github.com/pimoroni/explorer-hat): `curl https://get.pimoroni.com/explorerhat | bash`
+1. Install the [VCNL4010 library](https://learn.adafruit.com/using-vcnl4010-proximity-sensor/python-circuitpython): `sudo pip3 install adafruit-circuitpython-vcnl4010`
