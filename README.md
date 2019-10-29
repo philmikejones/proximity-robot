@@ -88,3 +88,30 @@ In the following images:
 1. You may need to [install pip3](https://www.raspberrypi.org/documentation/linux/software/python.md): `sudo apt install python3-pip`
 1. Install the [explorer library from Pimoroni](https://github.com/pimoroni/explorer-hat): `curl https://get.pimoroni.com/explorerhat | bash`
 1. Install the [VCNL4010 library](https://learn.adafruit.com/using-vcnl4010-proximity-sensor/python-circuitpython): `sudo pip3 install adafruit-circuitpython-vcnl4010`
+1. Download the `test-sensor.py` script to your robot: `wget https://raw.githubusercontent.com/philmikejones/proximity-robot/master/test-sensor.py`
+1. Download `robot.py` to your pi, which is the final script to control the robot: `wget https://raw.githubusercontent.com/philmikejones/proximity-robot/master/robot.py`
+
+## Calibrate sensor
+
+1. Run the sensor calibration script with `python3 test-sensor.py`. This should continually output integer values. Wave your hand in front of the sensor about 200mm and see how the value printed out changes. This is your threshold for when the robot should trigger evasive manoeuvres! On mine this was about 2500. When you're happy with the value you need, cancel this script with `CTRL` + `c`.
+1. Edit robot.py with `nano robot.py`.
+1. Edit the `if sensor.proximity < 2500:` and `elif sensor.proximity > 2501:` lines and replace the `2500` with the threshold you determined above.
+1. While you have this file open you can also edit the steps the robot takes to avoid obstacles. These are the lines under `elif sensor.proximity > 2501:`. I have just set the robot to back up a bit and turn for now.
+1. Close with `CTRL` + `x`, `y`
+
+## Run on startup
+
+1. Make it so your pi can execute this on startup with: `chmod +x robot.py`
+1. Set up your pi to start this script on reboot by entering `crontab -e`
+1. You might need to choose an editor; I recommend nano
+1. Add `@reboot /home/pi/robot.py` to the bottom of this file
+1. Close and save (`CTRL` + `x`, `y`). If you're successful you should see `crontab: installing new crontab`
+1. Shutdown your pi: `sudo shutdown -H now`
+1. When it turns off, disconnect the micro--usb network cable and the power supply
+1. Make sure it's mounted to the STS robot chassis and attach the wheels
+1. Plug in your battery and, after about 30 seconds or so, off it goes
+
+## Troubleshooting
+
+- If your robot turns on the spot when it starts up, work out which motor is moving backwards and uncomment the appropriate line at the top of the `robot.py` script to invert that motor. You will need to disconnect the power and reconnect via network. You'll probably want to unplug the motor cables while you're working on it.
+- If your robot goes backwards when it starts up, invert both motors by uncommenting both lines.
