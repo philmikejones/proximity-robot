@@ -115,3 +115,8 @@ In the following images:
 
 - If your robot turns on the spot when it starts up, work out which motor is moving backwards and uncomment the appropriate line at the top of the `robot.py` script to invert that motor. You will need to disconnect the power and reconnect via network. You'll probably want to unplug the motor cables while you're working on it.
 - If your robot goes backwards when it starts up, invert both motors by uncommenting both lines.
+
+## Licence
+
+- Text: CC-BY <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+- Code: MIT
